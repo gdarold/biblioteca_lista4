@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifc.aula.com.aula6;
+package br.edu.ifc.aula.com.aula6.exercicio1;
 
 import javax.swing.JOptionPane;
 

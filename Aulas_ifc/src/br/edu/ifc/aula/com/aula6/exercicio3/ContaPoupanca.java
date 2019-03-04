@@ -11,6 +11,10 @@ package br.edu.ifc.aula.com.aula6.exercicio3;
  */
 public class ContaPoupanca extends Conta {
 
+    public ContaPoupanca(Integer numeroConta, String agencia) {
+        super(numeroConta, agencia);
+    }
+
     @Override
     public void atualizaSaldo(double taxa) {
         this.setSaldo(this.saldo + (this.saldo * taxa) / 100);
