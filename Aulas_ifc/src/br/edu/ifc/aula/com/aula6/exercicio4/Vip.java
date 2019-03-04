@@ -29,7 +29,7 @@ public class Vip extends Ingresso {
      */
     @Override
     public void imprimeValor() {
-        JOptionPane.showMessageDialog(null, "Ingresso " + this.getClass().getSimpleName() + " com o valor  " + this.getValor());
+        JOptionPane.showMessageDialog(null, "Ingresso "+ this.getClass().getSimpleName()+" com o valor  " + this.getValor());
     }
 
     public void valorAdicional(double adcional) {
@@ -37,5 +37,7 @@ public class Vip extends Ingresso {
         this.setValor(this.getValor() + valorAdicional);
         imprimeValor();
     }
+
+   
 
 }
