@@ -13,19 +13,29 @@ import javax.swing.JOptionPane;
  */
 public class Vip extends Ingresso {
 
-    protected double valorAdicional;
+    private double valorAdicional;
+
     public Vip(double valor) {
         super(valor);
     }
 
-    @Override
-    public void imprimeValor() {
-        JOptionPane.showMessageDialog(null, "Ingresso Vip, com o valor "+this.getValor());
+    public Vip(double valorAdicional, double valor) {
+        super(valor);
+        this.valorAdicional = valorAdicional;
     }
 
-    public void valorAdicional(double adcional){
+    /**
+     *
+     */
+    @Override
+    public void imprimeValor() {
+        JOptionPane.showMessageDialog(null, "Ingresso " + this.getClass().getSimpleName() + " com o valor  " + this.getValor());
+    }
+
+    public void valorAdicional(double adcional) {
         this.valorAdicional = adcional;
-        this.setValor(this.getValor()+valorAdicional);
+        this.setValor(this.getValor() + valorAdicional);
         imprimeValor();
     }
+
 }

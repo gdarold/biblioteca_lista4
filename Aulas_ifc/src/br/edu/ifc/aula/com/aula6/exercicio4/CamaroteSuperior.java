@@ -15,4 +15,14 @@ public class CamaroteSuperior extends Vip {
         super(valor);
     }
 
+    @Override
+    public void valorAdicional(double adcional) {
+        super.valorAdicional(adcional); 
+    }
+
+    @Override
+    public void imprimeValor() {
+        super.imprimeValor(); 
+    }
+
 }
