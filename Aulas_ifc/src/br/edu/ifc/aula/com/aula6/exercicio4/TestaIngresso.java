@@ -25,7 +25,7 @@ public class TestaIngresso {
         v3.imprimeLocal();
        
         CamaroteSuperior v4 = new CamaroteSuperior(150);
-        v4.valorAdicional(80);;
+        v4.valorAdicional(80);
         
         Ingresso v5 = new Normal(50);
         v5.imprimeValor();
