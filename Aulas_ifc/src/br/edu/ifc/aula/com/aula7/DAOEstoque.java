@@ -9,11 +9,8 @@ package br.edu.ifc.aula.com.aula7;
  *
  * @author aluno
  */
-public interface DAOGeral {
-    
-    
-    public abstract void inserir();
-    public abstract void excluir();
-    public abstract void listar();
-    
+public interface DAOEstoque {
+
+    public abstract void baixar();
+
 }
