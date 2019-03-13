@@ -3,18 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifc.aula.com.aula7;
+package br.edu.ifc.aula.com.aula7.teste;
 
 /**
  *
  * @author aluno
  */
-public interface DAOGeral {
+public interface Nose {
     
-    static final String TESTE = "DAOGeral";
-    
-    public abstract void inserir();
-    public abstract void excluir();
-    public abstract void listar();
+    public int iMethod();
     
 }
