@@ -23,7 +23,7 @@ public class Main {
             arquivo = ArquivoUtil.abreArquivoTexto();
             String texto = ArquivoUtil.lerArquivoTexto(arquivo);
             
-            System.out.println(arquivo);
+            System.out.println(texto);
             JOptionPane.showMessageDialog(null, "Deu certo");
 
         } catch (FileNotFoundException | FileSystemException e) {
