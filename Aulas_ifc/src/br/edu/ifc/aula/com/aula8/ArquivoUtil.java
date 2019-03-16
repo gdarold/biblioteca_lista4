@@ -78,14 +78,11 @@ public class ArquivoUtil {
 
     }
 
-    public static void escreverArquivoTexto(File arquivo, String texto) {
+    public static void escreverArquivoTexto(File arquivo, String texto) throws Exception{
 
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(arquivo))) {
+        BufferedWriter bw = new BufferedWriter(new FileWriter(arquivo));
             bw.write(texto);
 
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
     }
 
     public static String lerArquivoTexto(File arquivo) throws FileNotFoundException {
