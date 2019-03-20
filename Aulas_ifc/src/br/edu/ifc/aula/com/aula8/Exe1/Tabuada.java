@@ -11,22 +11,35 @@ import javax.swing.JOptionPane;
  *
  * @author aluno
  */
-public class Exe1 {
+public class Tabuada {
 
-    public static void main(String[] args) {
-        int numero;
+    private int numero;
+
+    public Tabuada(int numero) {
+        this.numero = numero;
+    }
+
+    public void tabuada() {
 
         try {
-            numero = Integer.parseInt(JOptionPane.showInputDialog("Digite um numero 0 a 10"));
+            
 
-            for (int i = 0; i < 10; i++) {
-                System.out.println(numero + " x " + i + " = " + numero * i);
+            for (int i = 1; i <= 10; i++) {
+                System.out.println(this.numero + " x " + i + " = " + this.numero * i);
             }
 
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Informe um número ");
         }
 
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
 }
