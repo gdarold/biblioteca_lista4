@@ -85,12 +85,13 @@ public class ArquivoUtil {
     }
 
     public static String lerArquivoTexto(File arquivo) throws FileNotFoundException {
-        Scanner in = new Scanner(new FileReader(arquivo));
-        StringBuilder sb = new StringBuilder();
-        while (in.hasNext()) {
-            sb.append(in.next());
+        StringBuilder sb;
+        try (Scanner in = new Scanner(new FileReader(arquivo))) {
+            sb = new StringBuilder();
+            while (in.hasNext()) {
+                sb.append(in.next());
+            }
         }
-        in.close();
         return sb.toString();
     }
 }
