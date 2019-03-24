@@ -55,7 +55,7 @@ public class Vendas {
     }
     
     public void mostraDesconto(){
-        JOptionPane.showMessageDialog(null, this.valor);
+        JOptionPane.showMessageDialog(null, "O novo valor do produto: "+this.valor);
     }
 
     public double getValor() {
