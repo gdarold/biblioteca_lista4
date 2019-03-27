@@ -23,7 +23,7 @@ public class Main {
         
         meuFilmeFavorito.exibirDuracaoEmHoras();
         
-        System.out.println("Os filmes no catálogo são "+umFilmeQualquer.getTitulo()+" e "+meuFilmeFavorito.getTitulo());
+        System.out.println("Os filmes no catálogo são   "+umFilmeQualquer.getTitulo()+" e "+meuFilmeFavorito.getTitulo());
         
         
     }
