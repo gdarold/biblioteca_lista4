@@ -16,7 +16,7 @@ public class EntradaNaAgenda extends DataHora {
     public EntradaNaAgenda(int dia, int mes, int ano, int hor, int min, int seg, String ev) {
      
         super( dia, mes, ano,hor, min, seg);
-        evento = ev;
+        this.evento = ev;
     }
 
     @Override
