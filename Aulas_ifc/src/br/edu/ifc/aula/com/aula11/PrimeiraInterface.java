@@ -5,6 +5,8 @@
  */
 package br.edu.ifc.aula.com.aula11;
 
+import java.awt.BorderLayout;
+import java.awt.Container;
 import javax.swing.*;
 
 /**
@@ -14,13 +16,46 @@ import javax.swing.*;
 public class PrimeiraInterface extends javax.swing.JFrame {
 
     private JButton btnSalvar;
+    private JButton btnCancelar;
+    private JButton btnAbrir;
+    private JButton btnAjuda;
+    private JButton btnSul;
+    
+    
 
     public PrimeiraInterface() {
         super("Primeiro exemplo");
         super.setSize(300, 300);
         super.setVisible(false);
         super.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
+        
+        btnSalvar = new JButton("Salvar");
+         btnAbrir = new JButton("Abrir");
+          btnCancelar = new JButton("Cancelar");
+           btnAjuda = new JButton("Ajuda");
+           btnSul = new JButton("Sul");
+        
+        
+        Container c1 = super.getContentPane();
+        c1.setLayout(new BorderLayout());
+        c1.add(BorderLayout.CENTER, btnSalvar);
+         c1.add(BorderLayout.EAST, btnAbrir);
+          c1.add(BorderLayout.WEST, btnCancelar);
+           c1.add(BorderLayout.NORTH, btnAjuda);
+            c1.add(BorderLayout.SOUTH, btnSul);
+           
+        
+        
+        
+        
+        
+        
+        
+      
+        
+        
+        
+        
     }
 
 }
