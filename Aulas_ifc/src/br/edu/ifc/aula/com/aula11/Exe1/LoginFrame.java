@@ -22,18 +22,28 @@ public class LoginFrame extends JFrame{
     private JPasswordField txtSenha;
 
     public LoginFrame() {
-        
+      initComponentes();
+      initEventos();
         
     }
     
     
     private void initComponentes(){
-        
-        
+        super.setTitle("Login");
+        super.setBounds(0,0,250,200);
+        super.setLayout(null);
+        lblLogar = new JLabel("login");
+        lblSenha = new JLabel("Senha");
+        txtLogin = new JTextField();
+        txtSenha = new JPasswordField();
+        btnLogar = new JButton(UIManager.getIcon("FileView.FloppyDriveIcon"));
+        btnLogar.setText("Logar");
+        btnCancelar = new JButton("Cancelar");
         
     }
     
   private void initEventos(){
+      
       
       
       
