@@ -5,9 +5,6 @@
  */
 package br.edu.ifc.aula.com.aula11;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.*;
 
 /**
@@ -23,18 +20,6 @@ public class PrimeiraInterface extends javax.swing.JFrame {
         super.setSize(300, 300);
         super.setVisible(false);
         super.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-    }
-
-    public static void main(String[] args) {
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-
-            }
-
-        });
 
     }
 
