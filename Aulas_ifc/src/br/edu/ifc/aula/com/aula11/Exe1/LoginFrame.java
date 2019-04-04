@@ -14,20 +14,20 @@ import javax.swing.*;
  * @author aluno
  */
 public class LoginFrame extends JFrame {
-
+    
     private JTextField txtLogin;
     private JLabel lblSenha;
     private JLabel lblLogar;
     private JButton btnLogar;
     private JButton btnCancelar;
     private JPasswordField txtSenha;
-
+    
     public LoginFrame() {
         initComponentes();
         initEventos();
-
+        
     }
-
+    
     private void initComponentes() {
         super.setTitle("Login");
         super.setBounds(0, 0, 250, 200);
@@ -47,47 +47,46 @@ public class LoginFrame extends JFrame {
         txtSenha.setBounds(100, 75, 120, 25);
         btnLogar.setBounds(20, 120, 100, 25);
         btnCancelar.setBounds(125, 120, 100, 25);
-
+        
         super.getContentPane().add(lblLogar);
         super.getContentPane().add(lblSenha);
         super.getContentPane().add(txtLogin);
         super.getContentPane().add(txtSenha);
         super.getContentPane().add(btnLogar);
         super.getContentPane().add(btnCancelar);
-
+        
     }
-
+    
     private void initEventos() {
-
+        
         ActionListener ouvindoBotaoLogar = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 String textoLogin = txtLogin.getText().toLowerCase();
                 String textoSenha = String.valueOf(txtSenha.getPassword()).toLowerCase();
-
-                if (textoLogin.equals("aluno")&&textoSenha.equals("ifcfraiburgo")) {
-                    
-                  JOptionPane.showMessageDialog(null,"Logado com sucesso");
-                    
-                }else{
-                    
-                    JOptionPane.showMessageDialog(null,"Usuario ou senha invalida");
-                }
                 
+                if (textoLogin.equals("aluno") && textoSenha.equals("ifcfraiburgo")) {
+                    
+                    JOptionPane.showMessageDialog(null, "Logado com sucesso");
+                    
+                } else {
+                    
+                    JOptionPane.showMessageDialog(null, "Usuario ou senha invalida");
+                }
                 
             }
         };
         
         btnLogar.addActionListener(ouvindoBotaoLogar);
-
+        
         btnCancelar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 System.exit(0);
                 
-                  }
+            }
         });
         
     }
-
+    
 }
