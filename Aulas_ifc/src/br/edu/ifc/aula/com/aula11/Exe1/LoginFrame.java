@@ -36,7 +36,7 @@ public class LoginFrame extends JFrame {
         lblSenha = new JLabel("Senha");
         txtLogin = new JTextField();
         txtSenha = new JPasswordField();
-        btnLogar = new JButton(UIManager.getIcon("FileView.FloppyDriveIcon"));
+        btnLogar = new JButton(UIManager.getIcon("FileView.floppyDriveIcon"));
         btnLogar.setText("Logar");
         btnCancelar = new JButton("Cancelar");
 
@@ -62,8 +62,8 @@ public class LoginFrame extends JFrame {
         ActionListener ouvindoBotaoLogar = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                String textoLogin = txtLogin.getText();
-                String textoSenha = String.valueOf(txtSenha.getPassword());
+                String textoLogin = txtLogin.getText().toLowerCase();
+                String textoSenha = String.valueOf(txtSenha.getPassword()).toLowerCase();
 
                 if (textoLogin.equals("aluno")&&textoSenha.equals("ifcfraiburgo")) {
                     
@@ -77,8 +77,17 @@ public class LoginFrame extends JFrame {
                 
             }
         };
+        
         btnLogar.addActionListener(ouvindoBotaoLogar);
 
+        btnCancelar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                System.exit(0);
+                
+                  }
+        });
+        
     }
 
 }
