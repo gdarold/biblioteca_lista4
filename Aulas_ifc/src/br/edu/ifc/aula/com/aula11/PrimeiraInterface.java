@@ -7,7 +7,6 @@ package br.edu.ifc.aula.com.aula11;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Panel;
 import javax.swing.*;
