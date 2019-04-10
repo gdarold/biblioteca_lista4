@@ -5,32 +5,72 @@
  */
 package br.edu.ifc.aula.com.aula11.Calculadora;
 
-
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Panel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 /**
  *
  * @author aluno
  */
-public class Calculadora extends javax.swing.JFrame {
-
+public class Calculadora extends javax.swing.JFrame implements ActionListener {
     
     private JTextField calculo;
-
+    private JButton botao1;
+    private JButton botao2;
+    private JButton botao3;
+    private JButton botao4;
+    private JButton botao5;
+    private JButton botao6;
+    private JButton botao7;
+    private JButton botao8;
+    private JButton botao9;
+    private JButton botao0;
+    private JButton botaoDividir;
+    private JButton botaoSoma;
+    private JButton botaoSubtracao;
+    private JButton botaoMultiplicar;
+    private JButton botaoPonto;
+    private JButton botaoIgual;
+    
     public Calculadora() {
-        super("Calculadora");
+        
+        initComponentes();
+        adicionaListener();
+    }
+    
+    private void initComponentes() {
+        super.setTitle("Calculadora");
         super.setSize(300, 300);
         super.setVisible(false);
         super.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
+        
         calculo = new JTextField();
-        calculo.setPreferredSize(new Dimension (25,30));
-
+        calculo.setPreferredSize(new Dimension(25, 30));
+        calculo.setEditable(false);
+        
+        botao0 = new JButton("0");
+        botao1 = new JButton("1");
+        botao2 = new JButton("2");
+        botao3 = new JButton("3");
+        botao4 = new JButton("4");
+        botao5 = new JButton("5");
+        botao6 = new JButton("6");
+        botao7 = new JButton("7");
+        botao8 = new JButton("8");
+        botao9 = new JButton("9");
+        botaoDividir = new JButton("/");
+        botaoIgual = new JButton("=");
+        botaoMultiplicar = new JButton("*");
+        botaoPonto = new JButton(".");
+        botaoSoma = new JButton("+");
+        botaoSubtracao = new JButton("-");
+        
         Container c1 = super.getContentPane();
         c1.setLayout(new BorderLayout());
         //c1.add(BorderLayout.CENTER, btnSalvar);
@@ -40,27 +80,90 @@ public class Calculadora extends javax.swing.JFrame {
         //c1.add(BorderLayout.SOUTH, btnSul);
 
         Container c2 = new Panel();
-        c2.setLayout(new GridLayout(4,4));
-        c2.add(new JButton("7"));
-        c2.add(new JButton("8"));
-         c2.add(new JButton("9"));
-          c2.add(new JButton("/"));
-          c2.add(new JButton("4"));
-          c2.add(new JButton("5"));
-          c2.add(new JButton("6"));
-          c2.add(new JButton("*"));
-           c2.add(new JButton("1"));
-          c2.add(new JButton("2"));
-          c2.add(new JButton("3"));
-          c2.add(new JButton("-"));
-          c2.add(new JButton("0"));
-          c2.add(new JButton("."));
-          c2.add(new JButton("="));
-          c2.add(new JButton("+"));
-          
-        
+        c2.setLayout(new GridLayout(4, 4));
+        c2.add(botao7);
+        c2.add(botao8);
+        c2.add(botao9);
+        c2.add(botaoDividir);//
+        c2.add(botao4);
+        c2.add(botao5);
+        c2.add(botao6);
+        c2.add(botaoMultiplicar);//
+        c2.add(botao1);
+        c2.add(botao2);
+        c2.add(botao3);
+        c2.add(botaoSubtracao);//
+        c2.add(botao0);
+        c2.add(botaoPonto);//
+        c2.add(botaoIgual);
+        c2.add(botaoSoma);//
+
         c1.add(BorderLayout.CENTER, c2);
-
     }
-
+    
+    public void adicionaListener() {
+        botao0.addActionListener(this);
+        botao1.addActionListener(this);
+        botao2.addActionListener(this);
+        botao3.addActionListener(this);
+        botao4.addActionListener(this);
+        botao5.addActionListener(this);
+        botao6.addActionListener(this);
+        botao7.addActionListener(this);
+        botao8.addActionListener(this);
+        botao9.addActionListener(this);
+        botaoDividir.addActionListener(this);
+        botaoIgual.addActionListener(this);
+        botaoMultiplicar.addActionListener(this);
+        botaoPonto.addActionListener(this);
+        botaoSubtracao.addActionListener(this);
+        botaoSoma.addActionListener(this);
+        
+    }
+    
+    @Override
+    public void actionPerformed(ActionEvent event) {
+        String tela = event.getActionCommand();
+        if (event.getActionCommand().equals("0")) {
+            calculo.setText(this.calculo.getText() + tela);
+            
+        } else if (event.getActionCommand().equals("1")) {
+            calculo.setText(this.calculo.getText() + tela);
+            
+        } else if (event.getActionCommand().equals("2")) {
+            calculo.setText(this.calculo.getText() + tela);
+        } else if (event.getActionCommand().equals("3")) {
+            calculo.setText(this.calculo.getText() + tela);
+            
+        } else if (event.getActionCommand().equals("4")) {
+            calculo.setText(this.calculo.getText() + tela);
+        } else if (event.getActionCommand().equals("5")) {
+            calculo.setText(this.calculo.getText() + tela);
+        } else if (event.getActionCommand().equals("6")) {
+            calculo.setText(this.calculo.getText() + tela);
+        } else if (event.getActionCommand().equals("7")) {
+            calculo.setText(this.calculo.getText() + tela);
+        } else if (event.getActionCommand().equals("8")) {
+            calculo.setText(this.calculo.getText() + tela);
+        } else if (event.getActionCommand().equals("9")) {
+            calculo.setText(this.calculo.getText() + tela);
+        } else if (event.getActionCommand().equals("+")) {
+            calculo.setText(this.calculo.getText() + tela);
+        } else if (event.getActionCommand().equals("-")) {
+            calculo.setText(this.calculo.getText() + tela);
+        } else if (event.getActionCommand().equals("/")) {
+            calculo.setText(this.calculo.getText() + tela);
+        } else if (event.getActionCommand().equals("*")) {
+            calculo.setText(this.calculo.getText() + tela);
+        } else if (event.getActionCommand().equals(".")) {
+            calculo.setText(this.calculo.getText() + tela);
+        } else if (event.getActionCommand().equals("=")) {
+            System.out.println("faz o calculo");
+            
+            String verifica = calculo.getText();
+            
+        }
+        
+    }
+    
 }
