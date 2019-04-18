@@ -44,10 +44,10 @@ public class Main extends javax.swing.JFrame {
                 lblEscolhido.setText(e.getActionCommand());
                 // Pega o valor selecionado
 
-                // IfcJCheckBox check = (IfcJCheckBox) e.getSource();
+                // ifcJcheckBox check = (ifcJcheckBox) e.getSource();
                 // lblEscolhido.setText(check.getValorSelecionado());
-                // Pega o objeto selecionado
-                // IfcJCheckBox check = (IfcJCheckBox) e.getSource();
+                 //Pega o objeto selecionado
+                // ifcJcheckBox check = (ifcJcheckBox) e.getSource();
                 // lblEscolhido.setText(String.valueOf(tipo));
             }
         };
