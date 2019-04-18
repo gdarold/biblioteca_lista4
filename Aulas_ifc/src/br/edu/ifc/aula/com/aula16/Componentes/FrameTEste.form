@@ -23,38 +23,13 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-              <Component id="ifcJcheckBox1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="80" max="32767" attributes="0"/>
-              <Component id="ifcJcheckBox2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-          </Group>
+          <EmptySpace min="0" pref="242" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="ifcJcheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="ifcJcheckBox2" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="248" max="32767" attributes="0"/>
-          </Group>
+          <EmptySpace min="0" pref="293" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
-  <SubComponents>
-    <Component class="components.ifcJcheckBox" name="ifcJcheckBox1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="ifcJcheckBox1"/>
-      </Properties>
-    </Component>
-    <Component class="components.ifcJcheckBox" name="ifcJcheckBox2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="ifcJcheckBox2"/>
-      </Properties>
-    </Component>
-  </SubComponents>
 </Form>
