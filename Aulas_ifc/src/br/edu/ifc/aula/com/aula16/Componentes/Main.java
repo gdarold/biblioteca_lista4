@@ -29,6 +29,7 @@ public class Main extends javax.swing.JFrame {
         grupo = new ButtonGroup();
         grupo.add(chkMasculino);
         grupo.add(chkFeminino);
+        grupo.add(chkIndefinido);
 
         // chkMasculino.setStringSelected("M");
         // chkFeminino.setStringSelected("F");
@@ -36,6 +37,7 @@ public class Main extends javax.swing.JFrame {
         //
         chkMasculino.setObjeto(SexoType.MASCULINO);
         chkFeminino.setObjeto(SexoType.FEMININO);
+        chkIndefinido.setObjeto(SexoType.BAITOLA);
 
         ActionListener listener = new ActionListener() {
             @Override
@@ -53,6 +55,7 @@ public class Main extends javax.swing.JFrame {
         };
         chkFeminino.addActionListener(listener);
         chkMasculino.addActionListener(listener);
+        chkIndefinido.addActionListener(listener);
     }
 
     /**
@@ -67,6 +70,7 @@ public class Main extends javax.swing.JFrame {
         chkMasculino = new components.ifcJcheckBox();
         chkFeminino = new components.ifcJcheckBox();
         lblEscolhido = new javax.swing.JLabel();
+        chkIndefinido = new components.ifcJcheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,20 +80,23 @@ public class Main extends javax.swing.JFrame {
 
         lblEscolhido.setText("Selecione o sexo");
 
+        chkIndefinido.setText("Indefinido");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(chkMasculino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
-                .addComponent(chkFeminino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(108, 108, 108)
-                .addComponent(lblEscolhido)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(chkMasculino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(chkFeminino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblEscolhido))
+                .addGap(32, 32, 32)
+                .addComponent(chkIndefinido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,7 +104,8 @@ public class Main extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(chkMasculino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(chkFeminino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(chkFeminino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chkIndefinido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(lblEscolhido)
                 .addContainerGap(219, Short.MAX_VALUE))
@@ -144,13 +152,14 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private components.ifcJcheckBox chkFeminino;
+    private components.ifcJcheckBox chkIndefinido;
     private components.ifcJcheckBox chkMasculino;
     private javax.swing.JLabel lblEscolhido;
     // End of variables declaration//GEN-END:variables
 }
 
 enum SexoType {
-    MASCULINO('M'), FEMININO('F');
+    MASCULINO('M'), FEMININO('F'), BAITOLA('B');
 
     private char tipo;
 

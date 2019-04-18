@@ -25,15 +25,17 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="chkMasculino" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="119" max="32767" attributes="0"/>
-              <Component id="chkFeminino" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
-              <Component id="lblEscolhido" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="chkMasculino" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="chkFeminino" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="lblEscolhido" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <Component id="chkIndefinido" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="54" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -44,6 +46,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="chkMasculino" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="chkFeminino" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="chkIndefinido" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="lblEscolhido" min="-2" max="-2" attributes="0"/>
@@ -66,6 +69,11 @@
     <Component class="javax.swing.JLabel" name="lblEscolhido">
       <Properties>
         <Property name="text" type="java.lang.String" value="Selecione o sexo"/>
+      </Properties>
+    </Component>
+    <Component class="components.ifcJcheckBox" name="chkIndefinido">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Indefinido"/>
       </Properties>
     </Component>
   </SubComponents>
