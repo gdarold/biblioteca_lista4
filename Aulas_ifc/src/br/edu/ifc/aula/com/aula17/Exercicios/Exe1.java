@@ -7,6 +7,7 @@ package br.edu.ifc.aula.com.aula17.Exercicios;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.function.Predicate;
 
 
 /**
@@ -52,7 +53,17 @@ public class Exe1 {
             }
         }
        
-       
+       cores.removeIf(new Predicate<String>(){
+            @Override
+            public boolean test(String t) {
+                
+                return t.startsWith("A");
+          }
+            
+            
+           
+           
+       });
         
        
         System.out.println("Imprime todos elementos");
