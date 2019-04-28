@@ -124,44 +124,58 @@ public class Calculadora extends javax.swing.JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent event) {
         String tela = event.getActionCommand();
-        if (event.getActionCommand().equals("0")) {
-            calculo.setText(this.calculo.getText() + tela);
-            
-        } else if (event.getActionCommand().equals("1")) {
-            calculo.setText(this.calculo.getText() + tela);
-            
-        } else if (event.getActionCommand().equals("2")) {
-            calculo.setText(this.calculo.getText() + tela);
-        } else if (event.getActionCommand().equals("3")) {
-            calculo.setText(this.calculo.getText() + tela);
-            
-        } else if (event.getActionCommand().equals("4")) {
-            calculo.setText(this.calculo.getText() + tela);
-        } else if (event.getActionCommand().equals("5")) {
-            calculo.setText(this.calculo.getText() + tela);
-        } else if (event.getActionCommand().equals("6")) {
-            calculo.setText(this.calculo.getText() + tela);
-        } else if (event.getActionCommand().equals("7")) {
-            calculo.setText(this.calculo.getText() + tela);
-        } else if (event.getActionCommand().equals("8")) {
-            calculo.setText(this.calculo.getText() + tela);
-        } else if (event.getActionCommand().equals("9")) {
-            calculo.setText(this.calculo.getText() + tela);
-        } else if (event.getActionCommand().equals("+")) {
-            calculo.setText(this.calculo.getText() + tela);
-        } else if (event.getActionCommand().equals("-")) {
-            calculo.setText(this.calculo.getText() + tela);
-        } else if (event.getActionCommand().equals("/")) {
-            calculo.setText(this.calculo.getText() + tela);
-        } else if (event.getActionCommand().equals("*")) {
-            calculo.setText(this.calculo.getText() + tela);
-        } else if (event.getActionCommand().equals(".")) {
-            calculo.setText(this.calculo.getText() + tela);
-        } else if (event.getActionCommand().equals("=")) {
-            System.out.println("faz o calculo");
-            
-            String verifica = calculo.getText();
-            
+        switch (event.getActionCommand()) {
+            case "0":
+                calculo.setText(this.calculo.getText() + tela);
+                break;
+            case "1":
+                calculo.setText(this.calculo.getText() + tela);
+                break;
+            case "2":
+                calculo.setText(this.calculo.getText() + tela);
+                break;
+            case "3":
+                calculo.setText(this.calculo.getText() + tela);
+                break;
+            case "4":
+                calculo.setText(this.calculo.getText() + tela);
+                break;
+            case "5":
+                calculo.setText(this.calculo.getText() + tela);
+                break;
+            case "6":
+                calculo.setText(this.calculo.getText() + tela);
+                break;
+            case "7":
+                calculo.setText(this.calculo.getText() + tela);
+                break;
+            case "8":
+                calculo.setText(this.calculo.getText() + tela);
+                break;
+            case "9":
+                calculo.setText(this.calculo.getText() + tela);
+                break;
+            case "+":
+                calculo.setText(this.calculo.getText() + tela);
+                break;
+            case "-":
+                calculo.setText(this.calculo.getText() + tela);
+                break;
+            case "/":
+                calculo.setText(this.calculo.getText() + tela);
+                break;
+            case "*":
+                calculo.setText(this.calculo.getText() + tela);
+                break;
+            case ".":
+                calculo.setText(this.calculo.getText() + tela);
+                break;
+            case "=":
+                System.out.println("faz o calculo");
+                String verifica = calculo.getText();
+                break;
+            default:
+                break;
         }
         
     }
