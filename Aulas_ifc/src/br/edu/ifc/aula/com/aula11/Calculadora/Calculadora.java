@@ -130,6 +130,7 @@ public class Calculadora extends javax.swing.JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent event) {
         String tela = event.getActionCommand();
+        try{
         switch (event.getActionCommand()) {
             case "0":
                 calculo.setText(this.calculo.getText() + tela);
@@ -195,8 +196,12 @@ public class Calculadora extends javax.swing.JFrame implements ActionListener {
                 break;
 
             case "=":
+                
+                if(resultado!=0 &&!operacao.equals(" ")){
                 System.out.println("faz o calculo");
                 valor2 = Double.parseDouble(calculo.getText());
+                
+                
                 switch (operacao) {
 
                     case "+":
@@ -235,12 +240,17 @@ public class Calculadora extends javax.swing.JFrame implements ActionListener {
 
                 }
                 break;
+                }
             default:
                 calculo.setText(String.valueOf(0));
 
                 break;
         }
 
+    }catch(NumberFormatException ex){
+        
+        
+    }
     }
 
 }
