@@ -19,7 +19,7 @@ import javax.swing.*;
  * @author aluno
  */
 public class Calculadora extends javax.swing.JFrame implements ActionListener {
-    
+
     private JTextField calculo;
     private JButton botao1;
     private JButton botao2;
@@ -37,23 +37,27 @@ public class Calculadora extends javax.swing.JFrame implements ActionListener {
     private JButton botaoMultiplicar;
     private JButton botaoPonto;
     private JButton botaoIgual;
-    
+    private JButton limparTela;
+    private double resultado;
+    private String operacao;
+    private double valor2;
+
     public Calculadora() {
-        
+
         initComponentes();
         adicionaListener();
     }
-    
+
     private void initComponentes() {
         super.setTitle("Calculadora");
         super.setSize(300, 300);
         super.setVisible(false);
         super.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        
+
         calculo = new JTextField();
         calculo.setPreferredSize(new Dimension(25, 30));
         calculo.setEditable(false);
-        
+
         botao0 = new JButton("0");
         botao1 = new JButton("1");
         botao2 = new JButton("2");
@@ -70,14 +74,15 @@ public class Calculadora extends javax.swing.JFrame implements ActionListener {
         botaoPonto = new JButton(".");
         botaoSoma = new JButton("+");
         botaoSubtracao = new JButton("-");
-        
+        limparTela = new JButton("Limpa Tela");
+
         Container c1 = super.getContentPane();
         c1.setLayout(new BorderLayout());
         //c1.add(BorderLayout.CENTER, btnSalvar);
         //c1.add(BorderLayout.EAST, btnAbrir);
         //c1.add(BorderLayout.WEST, btnCancelar);
         c1.add(BorderLayout.NORTH, calculo);
-        //c1.add(BorderLayout.SOUTH, btnSul);
+        c1.add(BorderLayout.SOUTH, limparTela);
 
         Container c2 = new Panel();
         c2.setLayout(new GridLayout(4, 4));
@@ -100,7 +105,7 @@ public class Calculadora extends javax.swing.JFrame implements ActionListener {
 
         c1.add(BorderLayout.CENTER, c2);
     }
-    
+
     public void adicionaListener() {
         botao0.addActionListener(this);
         botao1.addActionListener(this);
@@ -118,9 +123,10 @@ public class Calculadora extends javax.swing.JFrame implements ActionListener {
         botaoPonto.addActionListener(this);
         botaoSubtracao.addActionListener(this);
         botaoSoma.addActionListener(this);
-        
+        limparTela.addActionListener(this);
+
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent event) {
         String tela = event.getActionCommand();
@@ -156,28 +162,85 @@ public class Calculadora extends javax.swing.JFrame implements ActionListener {
                 calculo.setText(this.calculo.getText() + tela);
                 break;
             case "+":
-                calculo.setText(this.calculo.getText() + tela);
+                //calculo.setText(this.calculo.getText() + tela);
+                resultado = Double.parseDouble(calculo.getText());
+                operacao = "+";
+                calculo.setText(" ");
                 break;
             case "-":
-                calculo.setText(this.calculo.getText() + tela);
+                //calculo.setText(this.calculo.getText() + tela);
+                resultado = Double.parseDouble(calculo.getText());
+                operacao = "-";
+                calculo.setText(" ");
                 break;
             case "/":
-                calculo.setText(this.calculo.getText() + tela);
+                // calculo.setText(this.calculo.getText() + tela);
+                resultado = Double.parseDouble(calculo.getText());
+                operacao = "/";
+                calculo.setText(" ");
                 break;
             case "*":
-                calculo.setText(this.calculo.getText() + tela);
+                // calculo.setText(this.calculo.getText() + tela);
+                resultado = Double.parseDouble(calculo.getText());
+                operacao = "*";
+                calculo.setText(" ");
                 break;
             case ".":
                 calculo.setText(this.calculo.getText() + tela);
                 break;
+            case "Limpa Tela":
+                calculo.setText(" ");
+                resultado = 0;
+                operacao = " ";
+                break;
+
             case "=":
                 System.out.println("faz o calculo");
-                String verifica = calculo.getText();
+                valor2 = Double.parseDouble(calculo.getText());
+                switch (operacao) {
+
+                    case "+":
+
+                        resultado = resultado + valor2;
+                        calculo.setText(String.valueOf(resultado));
+
+                        break;
+
+                    case "-":
+
+                        resultado = resultado - valor2;
+                        calculo.setText(String.valueOf(resultado));
+
+                        break;
+                    case "/":
+
+                        resultado = resultado / valor2;
+                        calculo.setText(String.valueOf(resultado));
+
+                        break;
+
+                    case "*":
+
+                        resultado = resultado * valor2;
+                        calculo.setText(String.valueOf(resultado));
+
+                        break;
+
+                    default:
+
+                        //resultado  = resultado;
+                        calculo.setText(String.valueOf(resultado));
+
+                        break;
+
+                }
                 break;
             default:
+                calculo.setText(String.valueOf(0));
+
                 break;
         }
-        
+
     }
-    
+
 }
