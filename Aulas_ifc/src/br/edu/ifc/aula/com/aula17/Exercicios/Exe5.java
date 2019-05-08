@@ -21,10 +21,10 @@ public class Exe5 {
         fila.offer("Ir no banheiro");
         fila.offer("Vestir a roupa");
 
-         System.out.println("Primeiro elemento " + fila.element());
-         System.out.println("Primeiro elemento " + fila.poll());
-         System.out.println("Segundo elemento " + fila.peek());
-         System.out.println("elemento"+fila.isEmpty());
+         System.out.println("Elemento sem remover " + fila.element());
+         System.out.println("Elemento removendo " + fila.poll());
+                 
+         System.out.println("Fila esta vazia "+fila.isEmpty());
         
     }
 
