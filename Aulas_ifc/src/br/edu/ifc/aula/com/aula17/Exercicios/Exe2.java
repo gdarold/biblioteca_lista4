@@ -14,7 +14,7 @@ import java.util.function.Predicate;
  *
  * @author aluno
  */
-public class Exe1 {
+public class Exe2 {
 
     public static void main(String[] args) {
 
