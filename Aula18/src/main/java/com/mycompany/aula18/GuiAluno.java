@@ -24,6 +24,8 @@ public class GuiAluno extends javax.swing.JFrame implements ActionListener {
         initComponents();
         adicionaListener();
         nova = new FormaLista();
+        alunos = nova.CriaLista();
+        
 
     }
   
@@ -302,6 +304,10 @@ public class GuiAluno extends javax.swing.JFrame implements ActionListener {
         switch (event.getActionCommand()) {
 
             case "Inicio":
+                lblPosicao.setText(alunos.get(0).getMatricula().toString());
+                lblPosicao.setText(alunos.get(0).getMatricula().toString());
+                lblPosicao.setText(alunos.get(0).getMatricula().toString());
+                
                 
                 break;
             case "Anterior":
