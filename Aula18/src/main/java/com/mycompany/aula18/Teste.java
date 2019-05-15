@@ -8,7 +8,6 @@ package com.mycompany.aula18;
 import com.github.javafaker.Faker;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
