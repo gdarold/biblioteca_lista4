@@ -5,10 +5,13 @@
  */
 package com.mycompany.aula18;
 
+import com.github.javafaker.Faker;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /**
  *
@@ -17,18 +20,40 @@ import java.util.List;
 public class GuiAluno extends javax.swing.JFrame implements ActionListener {
 
     List<Aluno> alunos = new ArrayList<>();
-    FormaLista nova;
-    
-    
+   
+    private int posicao = 0;
+
     public GuiAluno() {
         initComponents();
+        formaLista();
         adicionaListener();
-        nova = new FormaLista();
-        alunos = nova.CriaLista();
+        preencheLista();
+        atualizarValores();
+        
         
 
     }
-  
+    
+    private void formaLista(){
+        
+        Faker fake = new Faker(new Locale("pt-BR"));
+
+        for (int i = 0; i < 40; i++) {
+
+            Long matricula = fake.number().numberBetween(0L, 100000L);
+            String nome = fake.name().fullName();
+            Date dtnascimento = fake.date().birthday();
+            Double bolsa = fake.number().randomDouble(2, 100, 500);
+            boolean matriculado = fake.random().nextBoolean();
+
+            Aluno aluno = new Aluno(matricula, nome, dtnascimento, bolsa, matriculado);
+            alunos.add(aluno);
+
+        }
+        
+        
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -50,7 +75,7 @@ public class GuiAluno extends javax.swing.JFrame implements ActionListener {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        ckMatriculado = new javax.swing.JCheckBox();
         lblMatricula = new javax.swing.JLabel();
         lblIdade = new javax.swing.JLabel();
         lblBolsa = new javax.swing.JLabel();
@@ -115,7 +140,7 @@ public class GuiAluno extends javax.swing.JFrame implements ActionListener {
 
         jLabel6.setText("Valor Bolsa");
 
-        jCheckBox1.setText("Matriculado");
+        ckMatriculado.setText("Matriculado");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -128,7 +153,7 @@ public class GuiAluno extends javax.swing.JFrame implements ActionListener {
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
-                    .addComponent(jCheckBox1))
+                    .addComponent(ckMatriculado))
                 .addGap(20, 20, 20)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblMatricula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -157,7 +182,7 @@ public class GuiAluno extends javax.swing.JFrame implements ActionListener {
                     .addComponent(jLabel6)
                     .addComponent(lblBolsa, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox1)
+                .addComponent(ckMatriculado)
                 .addContainerGap(71, Short.MAX_VALUE))
         );
 
@@ -267,7 +292,7 @@ public class GuiAluno extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JButton btnInicio;
     private javax.swing.JButton btnProximo;
     private javax.swing.JButton btnUltimo;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox ckMatriculado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -290,34 +315,41 @@ public class GuiAluno extends javax.swing.JFrame implements ActionListener {
         btnAnterior.addActionListener(this);
         btnProximo.addActionListener(this);
         btnUltimo.addActionListener(this);
+        
+       
     }
 
-    public void PreencheLista(){
-        
-        
-        
+    public void preencheLista() {
+       
+        lblPosicao.setText("" + posicao);
+        lblTamanho.setText("" + alunos.size());
+        Aluno aluno = alunos.get(posicao);
+        lblMatricula.setText(aluno.getMatricula().toString());
+        lblNome.setText(aluno.getNome());
+        lblBolsa.setText(aluno.getValorbolsa().toString());
+        ckMatriculado.setSelected(aluno.isMatriculado());
+        lblIdade.setText(aluno.getIdade().toString());
+
     }
+
     @Override
     public void actionPerformed(ActionEvent event) {
         String tela = event.getActionCommand();
 
-        switch (event.getActionCommand()) {
+        switch (tela) {
 
             case "Inicio":
-                lblPosicao.setText(alunos.get(0).getMatricula().toString());
-                lblPosicao.setText(alunos.get(0).getMatricula().toString());
-                lblPosicao.setText(alunos.get(0).getMatricula().toString());
-                
-                
+                posicao = 0;
+
                 break;
             case "Anterior":
-
+                posicao --;
                 break;
             case "Proximo":
-
+                posicao ++;
                 break;
             case "Ultimo":
-
+                posicao = alunos.size() - 1;
                 break;
 
             default:
@@ -325,5 +357,16 @@ public class GuiAluno extends javax.swing.JFrame implements ActionListener {
                 break;
         }
 
+        preencheLista();
+        atualizarValores();
+    }
+
+    private void atualizarValores() {
+        boolean inicio = posicao == 0;
+        boolean fim = posicao == alunos.size() - 1;
+        btnInicio.setEnabled(!inicio);
+        btnAnterior.setEnabled(!inicio);
+        btnProximo.setEnabled(!fim);
+        btnUltimo.setEnabled(!fim);
     }
 }

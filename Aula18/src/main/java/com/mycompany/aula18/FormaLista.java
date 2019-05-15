@@ -44,4 +44,17 @@ public class FormaLista {
         return alunos;
     }
 
+   
+    
+
+ public static void main(String[] args) {
+        
+        FormaLista lista = new FormaLista();
+        
+       
+        
+        Aluno aluno = lista.CriaLista().get(2);
+        
+        System.out.println(aluno);
+    }
 }
